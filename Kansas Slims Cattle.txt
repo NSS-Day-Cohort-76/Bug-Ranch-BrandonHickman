@@ -1,0 +1,29 @@
+title Kansas Slim's Cattle
+
+participant Data
+participant Main
+participant Functions
+
+Data<--Main:Data is requested using require() method
+Data-->Main:Data is returned
+Main-->Functions:Calls 'drovers' that passes through hireDrovers function
+Functions-->Main: Returns the number of drovers needed to herd the cattle.
+note over Main:Displays '5' drovers
+Main-->Functions: Calls cattleToDrive
+Functions-->Main: Returns number of cattle
+note over Main: Displays 50
+loop 
+Main-->Functions: Calls cattle
+Functions-->Main: Loop iterates through cattleType array and returns random breed type for 50 cattle
+note over Main: Displays 50 cattle of random breed types
+end
+loop
+Main-->Functions:Calls drovers
+Functions-->Main: Loop interates through drovers array to randomly return 5 drovers first_name and last_name
+note over Main: Displays 5 drovers first and last name 
+end
+loop 
+Main-->Functions: Calls journey
+Functions-->Main: Returns random areas of terrain
+note over Main: Displays list of the following terrain; river, mountain, forest, plain.
+end
